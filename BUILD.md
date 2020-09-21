@@ -19,7 +19,7 @@ https://github.com/dimhoff/ti99_4a_tape_decode
 
 Allows the creation of wav files for loading data from cassette.  This
 allows me to load programs without installing a Peripheral Expansion
-or flash cartridge.
+or flash cartridge.  Requires python 2.
 
 
 # Build Instructions
@@ -46,7 +46,7 @@ create a new file called `greet.obj`.
 
 Copy the created .obj file (e.g. `greet.obj`) into one of the DSK
 File-In-A-Directory (FIAD) locations under your Classic99
-installation.
+installation, e.g. DSK1.
 
 ### Testing
 
@@ -68,9 +68,13 @@ the case of the GREET program, you'll see that the program name is
 "GREET", naturally.
 
 ```
-        TEXT 'GREET '           ; store "GREET " (always 6 chars) as pgm name
+        TEXT    'GREET '        ; store "GREET " (always 6 chars) as pgm name
 ```
 
 Do not add the space to the program name.  Just type "GREET" (in this
 case) and hit enter.  The program should immediately run if everything
 was done correctly.
+
+Note that the program will stay in the Mini Memory unless you
+   1. Re-initialize the Mini Memory, or
+   2. Load some other application on top of it.
